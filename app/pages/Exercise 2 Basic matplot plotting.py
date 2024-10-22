@@ -12,5 +12,12 @@ Tasks:
 - Import the library and based on the number of columns selected, plot the data accordinly from the plotter.
 """)
 
-lib = st.selectbox(glob("**/*.csv", recursive=True))
-import lib
+option = st.selectbox(glob("**/*.csv", recursive=True))
+if option is None:
+  st.write('Please selectsomething')
+else:
+  df = pd.read_csv(option)
+  st.write(df.head())
+
+options = st.multiselect(df.columns)
+
