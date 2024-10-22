@@ -11,3 +11,6 @@ Tasks:
 - Use selectbox to select a dataset
 - Import the library and based on the number of columns selected, plot the data accordinly from the plotter.
 """)
+
+lib = st.selectbox(glob("**/*.csv", recursive=True))
+import lib
